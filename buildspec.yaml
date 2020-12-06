@@ -1,0 +1,26 @@
+# ~/environment/sam-app/buildspec.yml
+---
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - sudo pip install --upgrade awscli
+      - aws --version
+      - sudo pip install chalice
+      - cd helloworld/
+      - sudo pip install -r requirements.txt
+      - cd ..
+  build:
+    commands:
+      # Use Build phase to build your artifacts (compile, etc.)
+      - cd helloworld
+      - chalice package /tmp/packaged
+      - aws cloudformation package --template-file /tmp/packaged/sam.json --s3-bucket $PACKAGE_BUCKET --output-template-file packaged.yaml
+
+artifacts:
+  discard-paths: yes
+  files:
+    # List of local artifacts that will be passed down the pipeline
+    - packaged.yaml
