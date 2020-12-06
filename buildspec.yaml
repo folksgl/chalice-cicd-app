@@ -6,11 +6,11 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-      - sudo pip install --upgrade awscli
+      - pip install --upgrade awscli
       - aws --version
-      - sudo pip install chalice
+      - pip install chalice
       - cd helloworld/
-      - sudo pip install -r requirements.txt
+      - pip install -r requirements.txt
       - cd ..
   build:
     commands:
