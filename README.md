@@ -23,7 +23,13 @@ To install Chalice (only necessary for local development without the CI/CD pipel
 The development flow for this repo can be split into two streams. Work on the CI/CD pipeline to deploy the application is found under the [pipeline](https://github.com/folksgl/chalice-cicd-app/pipeline) while the application code can be done in the [helloworld](https://github.com/folksgl/chalice-cicd-app/helloworld).
 
 ### Deploying the Chalice application
+All deployments require having the correct AWS CLI credentials in place. If you haven't already, install the AWS CLI and set up credentials to your account.
 #### With the CI/CD pipeline
+Before deploying with the CI/CD pipeline, you must create a CodeStar Connection to the GitHub account your repo is located in. Once that connection is created,
+store the ARN of the connection in a SecretsManager Secret, with the JSON key of 'arn'. In JSON, the secret should look like the following:
+```json
+{ "arn": "<my-connection-arn>" }
+```
 To deploy the application with the CI/CD pipeline:
 ```sh
 cd pipeline
