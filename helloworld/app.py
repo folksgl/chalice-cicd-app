@@ -1,22 +1,23 @@
 from chalice import Chalice
 
-app = Chalice(app_name='helloworld')
+app = Chalice(app_name="helloworld")
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return {'hello': 'world'}
+    return {"hello": "world"}
+
+
+@app.route("/hello/{name}")
+def hello_name(name):
+    # '/hello/james' -> {"hello": "james"}
+    return {"hello": name}
 
 
 # The view function above will return {"hello": "world"}
 # whenever you make an HTTP GET request to '/'.
 #
 # Here are a few more examples:
-#
-# @app.route('/hello/{name}')
-# def hello_name(name):
-#    # '/hello/james' -> {"hello": "james"}
-#    return {'hello': name}
 #
 # @app.route('/users', methods=['POST'])
 # def create_user():
