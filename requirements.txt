@@ -1,4 +1,5 @@
 pre-commit
+chalice
 aws-cdk.aws-s3
 aws-cdk.aws-codepipeline
 aws-cdk.aws-codepipeline-actions

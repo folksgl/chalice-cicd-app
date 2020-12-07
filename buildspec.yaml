@@ -8,8 +8,7 @@ phases:
     commands:
       - pip install --upgrade awscli
       - aws --version
-      - pip install chalice
-      - cd helloworld/
+      - cd app/
       - pip install -r requirements.txt
       - cd ..
   build:
