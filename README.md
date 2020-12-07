@@ -28,7 +28,7 @@ pre-commit install
 ```
 
 ## Development Flow
-The development flow for this repo can be split into two streams. Work on the CI/CD pipeline to deploy the application is found under the [pipeline](https://github.com/folksgl/chalice-cicd-app/pipeline) while the application code can be done in the [helloworld](https://github.com/folksgl/chalice-cicd-app/helloworld).
+The development flow for this repo can be split into two streams. Work on the CI/CD pipeline to deploy the application is found under the [pipeline](https://github.com/folksgl/chalice-cicd-app/pipeline) while the application code can be done in the [app directory](https://github.com/folksgl/chalice-cicd-app/app).
 
 ### Deploying the Chalice application
 All deployments require having the correct AWS CLI credentials in place. If you haven't already, install the AWS CLI and set up credentials to your account.
