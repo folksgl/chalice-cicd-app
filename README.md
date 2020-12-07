@@ -19,6 +19,16 @@ To install the AWS CDK, please follow the [AWS CDK installation instructions](ht
 ### Chalice
 To install Chalice (only necessary for local development without the CI/CD pipeline), please follow the [Chalice installation instructions](https://aws.github.io/chalice/quickstart.html).
 
+### Setting up your environment
+To set up your environment, follow these steps:
+```sh
+git clone https://github.com/folksgl/chalice-cicd-app.git
+cd chalice-cicd-app
+python3 -m venv venv38
+source venv38/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
 ## Development Flow
 The development flow for this repo can be split into two streams. Work on the CI/CD pipeline to deploy the application is found under the [pipeline](https://github.com/folksgl/chalice-cicd-app/pipeline) while the application code can be done in the [helloworld](https://github.com/folksgl/chalice-cicd-app/helloworld).
 
