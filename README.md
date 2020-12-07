@@ -27,6 +27,7 @@ cd chalice-cicd-app
 python3 -m venv venv38
 source venv38/bin/activate
 python3 -m pip install -r requirements.txt
+pre-commit install
 ```
 
 ## Development Flow
