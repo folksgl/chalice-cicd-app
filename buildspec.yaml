@@ -8,13 +8,12 @@ phases:
     commands:
       - pip install --upgrade awscli
       - aws --version
-      - cd app/
-      - pip install -r requirements.txt
-      - cd ..
+      - pip install chalice
+      - pip install -r app/requirements.txt
   build:
     commands:
       # Use Build phase to build your artifacts (compile, etc.)
-      - cd helloworld
+      - cd app
       - chalice package /tmp/packaged
       - aws cloudformation package --template-file /tmp/packaged/sam.json --s3-bucket $PACKAGE_BUCKET --output-template-file ../packaged.yaml
 
