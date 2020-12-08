@@ -20,3 +20,7 @@ def test_hello_name_function(test_client):
     name = "myname"
     response = test_client.http.get(f"/hello/{name}")
     assert response.json_body == {"hello": f"{name}"}
+
+    name = "different_name"
+    response = test_client.http.get(f"/hello/{name}")
+    assert response.json_body == {"hello": f"{name}"}
