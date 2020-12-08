@@ -1,5 +1,6 @@
 pre-commit
 chalice
+pytest
 aws-cdk.aws-s3
 aws-cdk.aws-codepipeline
 aws-cdk.aws-codepipeline-actions
