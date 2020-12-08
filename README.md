@@ -4,7 +4,7 @@ Chalice CI/CD App
 - [Overview](#overview)
 - [Installation](#installation)
     - [AWS CDK](#aws-cdk)
-    - [Chalice](#chalice)
+    - [Setting Up](#setting-up-your-environment)
 - [Development Flow](#development-flow)
     - [Deploying the application](#deploying-the-chalice-application)
 
@@ -15,9 +15,6 @@ chalice-cicd-app is a template repo for a serverless application using the [AWS 
 
 ### AWS CDK
 To install the AWS CDK, please follow the [AWS CDK installation instructions](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install).
-
-### Chalice
-To install Chalice (only necessary for local development without the CI/CD pipeline), please follow the [Chalice installation instructions](https://aws.github.io/chalice/quickstart.html).
 
 ### Setting up your environment
 To set up your environment, follow these steps:
@@ -31,7 +28,7 @@ pre-commit install
 ```
 
 ## Development Flow
-The development flow for this repo can be split into two streams. Work on the CI/CD pipeline to deploy the application is found under the [pipeline](https://github.com/folksgl/chalice-cicd-app/pipeline) while the application code can be done in the [helloworld](https://github.com/folksgl/chalice-cicd-app/helloworld).
+The development flow for this repo can be split into two streams. Work on the CI/CD pipeline to deploy the application is found under the [pipeline](https://github.com/folksgl/chalice-cicd-app/pipeline) while the application code can be done in the [app directory](https://github.com/folksgl/chalice-cicd-app/app).
 
 ### Deploying the Chalice application
 All deployments require having the correct AWS CLI credentials in place. If you haven't already, install the AWS CLI and set up credentials to your account.
