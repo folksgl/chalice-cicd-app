@@ -9,7 +9,9 @@ phases:
       - pip install --upgrade awscli
       - aws --version
       - pip install chalice
+      - chalice --version
       - pip install pytest
+      - pytest --version
       - pip install -r app/requirements.txt
   build:
     commands:
