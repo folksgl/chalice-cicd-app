@@ -24,3 +24,7 @@ def test_hello_name_function(test_client):
     name = "different_name"
     response = test_client.http.get(f"/hello/{name}")
     assert response.json_body == {"hello": f"{name}"}
+
+
+def test_fail_build():
+    assert 1 == 2
