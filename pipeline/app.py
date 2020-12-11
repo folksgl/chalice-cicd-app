@@ -6,23 +6,18 @@ from aws_cdk import core
 from pipeline_stack import PipelineStack
 
 
-APP = core.App()
+app = core.App()
 
 with open("../app/.chalice/config.json") as config_file:
-    CONFIG = json.load(config_file)
-
-if "app_name" not in CONFIG:
-    raise KeyError("No 'app_name' configured in app/.chalice/config.json")
-
-APP_NAME = CONFIG.get("app_name")
-PIPELINE_STACK_NAME = f"{APP_NAME}-pipeline"
+    config = json.load(config_file)
+    app_name = config["app_name"]
 
 PipelineStack(
-    APP,
-    APP_NAME,
-    stack_name=PIPELINE_STACK_NAME,
+    app,
+    app_name,
+    stack_name=f"{app_name}-pipeline",
     repo_owner="folksgl",
     repo_name="chalice-cicd-app",
 )
 
-APP.synth()
+app.synth()
