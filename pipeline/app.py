@@ -12,7 +12,7 @@ with open("../app/.chalice/config.json") as config_file:
     CONFIG = json.load(config_file)
 
 if "app_name" not in CONFIG:
-    print("Please configure 'app_name' in app/.chalice/config.json")
+    raise KeyError("No 'app_name' configured in app/.chalice/config.json")
 
 APP_NAME = CONFIG.get("app_name")
 PIPELINE_STACK_NAME = f"{APP_NAME}-pipeline"
