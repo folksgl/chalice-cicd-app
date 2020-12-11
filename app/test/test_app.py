@@ -1,13 +1,13 @@
 """ Tests for app.py """
 from chalice.test import Client
 from pytest import fixture
-from app import APP
+from app import app
 
 
 @fixture(name="client_fixture")
 def test_client():
     """ Test fixture for creating a chalice Client """
-    with Client(APP) as client:
+    with Client(app) as client:
         yield client
 
 

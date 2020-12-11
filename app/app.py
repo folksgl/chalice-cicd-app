@@ -1,16 +1,27 @@
 """ Sample Chalice "hello world" application """
+import json
 from chalice import Chalice
 
-APP = Chalice(app_name="app")
+with open(".chalice/config.json") as config_file:
+    CONFIG = json.load(config_file)
+    print(json.dumps(CONFIG))
+
+if "app_name" not in CONFIG:
+    print("Please configure 'app_name' in app/.chalice/config.json")
+
+APP_NAME = CONFIG.get("app_name")
+
+# Chalice currently requires app.py to have 'app' (lowercase) available
+app = Chalice(app_name=APP_NAME)
 
 
-@APP.route("/")
+@app.route("/")
 def index():
     """ Index page for the hello world api """
     return {"hello": "world"}
 
 
-@APP.route("/hello/{name}")
+@app.route("/hello/{name}")
 def hello_name(name):
     """ Sample route for returning names """
     return {"hello": name}
