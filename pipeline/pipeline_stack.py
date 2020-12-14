@@ -17,6 +17,7 @@ class PipelineStack(core.Stack):
         construct_id: str,
         repo_owner: str,
         repo_name: str,
+        repo_branch: str,
         **kwargs,
     ) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -43,7 +44,7 @@ class PipelineStack(core.Stack):
             ).to_string(),
             repo=repo_name,
             owner=repo_owner,
-            branch="main",
+            branch=repo_branch,
             output=source_output,
         )
         pipeline.add_stage(stage_name="Source", actions=[github_source])

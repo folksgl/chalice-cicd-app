@@ -18,6 +18,7 @@ PipelineStack(
     stack_name=f"{app_name}-pipeline",
     repo_owner="folksgl",
     repo_name="chalice-cicd-app",
+    repo_branch="main",
 )
 
 app.synth()
