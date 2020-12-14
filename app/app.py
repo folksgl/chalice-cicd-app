@@ -1,13 +1,9 @@
 """ Sample Chalice "hello world" application """
-import json
 from chalice import Chalice
 
-with open(".chalice/config.json") as config_file:
-    config = json.load(config_file)
-    app_name = config["app_name"]
-
 # Chalice currently requires app.py to have 'app' (lowercase) available
-app = Chalice(app_name=app_name)
+# The app_name should match the value found in app/.chalice/config.json
+app = Chalice(app_name="app")
 
 
 @app.route("/")
